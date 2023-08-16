@@ -38,7 +38,11 @@
                 })
             }).then((res) => res.json());   // convirting server response into JSON
 
-            console.log(result);
+            if (result.status === 'ok') {
+                alert("Success");
+            } else {
+                alert(result.error);
+            }
         }
     </script>
 </body>

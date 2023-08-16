@@ -16,21 +16,41 @@ mongoose.connect("mongodb://127.0.0.1:27017/login-app-db")
     .then(() => console.log(`Database is Connected`))
     .catch((err) => console.log({ msg: err }));
 
+
 // Roughts
 app.post("/api/register", async (req, res) => {
 
     const { username, password: plainTextPassword } = req.body;
+
+    if (!username || typeof username !== 'string') {
+        return res.json({ status: 'error', error: 'Invalid username' });
+    }
+
+    if (!plainTextPassword || typeof plainTextPassword !== 'string') {
+        return res.json({ status: 'error', error: 'Invalid password' });
+    }
+
+    if (plainTextPassword.length < 5) {
+        return res.json({
+            status: 'error',
+            error: 'Password too small. should be atleast 6 characters'
+        })
+    }
+
     const password = await bcrypt.hash(plainTextPassword, 10);
 
     try {
         const response = await User.create({ username, password });
         console.log(response);
     } catch (error) {
-        console.log(error);
-        return res.json({ status: "error" });
+        if (error.code === 11000) {
+            // duplicate key
+            return res.json({ status: 'error', error: 'username already in use' });
+        }
+        throw error
     }
 
-    res.json({ status: "ok Sab Changa se" });
+    res.json({ status: "ok" });
 });
 
 app.listen(port, () => {
