@@ -28,21 +28,77 @@
 
 <body>
 
-    <p class="display-large">Typography</p>
-    <p class="display-medium">Typography</p>
-    <p class="display-small">Typography</p>
-    <p class="headline-large">Typography</p>
-    <p class="headline-medium">Typography</p>
-    <p class="headline-small">Typography</p>
-    <p class="title-large">Typography</p>
-    <p class="title-medium">Typography</p>
-    <p class="title-small">Typography</p>
-    <p class="body-large">Typography</p>
-    <p class="body-medium">Typography</p>
-    <p class="body-small">Typography</p>
-    <p class="label-large">Typography</p>
-    <p class="label-medium">Typography</p>
-    <p class="label-small">Typography</p>
+    <header class="topbar">
+        <a href="#" class="logo">
+            <img src="./assets//images/Logo_dark.png" alt="portfolio" width="145" height="32" class="dark" />
+            <img src="./assets//images/Logo_light.png" alt="portfolio" width="145" height="32" class="light" />
+        </a>
+
+        <button class="icon-btn theme-btn" data-theme-btn>
+            <span class="material-symbols-outlined dark" aria-hidden="true"> dark_mode </span>
+            <span class="material-symbols-outlined light" aria-hidden="true"> light_mode </span>
+            <div class="state-layer"></div>
+        </button>
+
+    </header>
+
+    <main>
+        <article>
+            <!-- HERO -->
+            <section class="section hero">
+                <div class="container">
+                    <figure class="hero-banner img-holder" style="--width: 240; --height:240;">
+                        <img src="./assets/images/72165010-removebg-preview-removebg-preview.png" width="240"
+                            height="240" alt="Rishabh Tripathi" class="img-cover" />
+                    </figure>
+                    <div class="hero-content">
+                        <div class="label-large section-subtitle">software Developer</div>
+                        <h1 class="display-small">Rishabh Tripathi</h1>
+                        <p class="body-large section-text">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio praesentium itaque, quia
+                            reiciendis ratione culpa nulla ipsam rem necessitatibus exercitationem natus, suscipit
+                            mollitia accusamus eius provident ut
+                        </p>
+                        <div class="btn-wrapper">
+                            <a href="mailto:rishabhtripathi0319@gmail.com" class="chip">
+                                <span class="material-symbols-outlined" aria-hidden="true"> mail </span>
+                                <span class="label-large">rishabhtripathi0319@gmail.com</span>
+                                <div class="state-layer"></div>
+                            </a>
+                            <a href="tel:+919140279798" class="chip">
+                                <span class="material-symbols-outlined" aria-hidden="true"> mail </span>
+                                <span class="label-large">+919140279798</span>
+                                <div class="state-layer"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- MAIN CONTENT -->
+            <div class="article">
+                <div class="about-card">
+                    <h2 class="card-title title-medium">About</h2>
+                    <p class="body-medium card-text">A passionate software engineer with a strong background in Computer
+                        Science.</p>
+                    <ul class="about-list">
+                        <li class="list-item">
+                            <span class="material-symbols-outlined" aria-hidden="true"> location_on </span>
+                            <span class="label-medium">Cairo, Egypt</span>
+                        </li>
+                        <li class="list-item">
+                            <span class="material-symbols-outlined" aria-hidden="true"> work </span>
+                            <span class="label-medium">Student</span>
+                        </li>
+                        <li class="list-item">
+                            <span class="material-symbols-outlined" aria-hidden="true"> captive_portal </span>
+                            <a href="" class="label-medium">https://example.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </main>
+
     <script src="./js/script.js"></script>
 </body>
 
